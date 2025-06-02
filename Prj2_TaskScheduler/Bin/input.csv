@@ -1,0 +1,4 @@
+name,command,arrival,burst,priority
+T1,./task1,0,10,2
+T2,./task2,3, 5,5
+T3,./task3,6, 7,3

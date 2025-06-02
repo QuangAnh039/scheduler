@@ -1,0 +1,5 @@
+current_time,22
+name,command,arrival,burst,remaining,priority,pid,started,finished
+T1,./task1,0,10,0,2,2513,1,1
+T2,./task2,3,5,0,5,2572,1,1
+T3,./task3,6,7,0,3,2607,1,1
