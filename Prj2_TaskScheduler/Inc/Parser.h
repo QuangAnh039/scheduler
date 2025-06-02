@@ -3,7 +3,8 @@
 
 #include <stdio.h>
 #include "GlobalData.h"
-int load_state_from_csv(const char *filename);
-void save_state_to_csv(const char *filename);
+void parse_input_csv(const char *filename);
+void parse_backup_csv(const char *filename);
+void save_backup_csv(const char *filename);
 
 #endif

@@ -10,6 +10,7 @@
 
 #define MAX_TASKS    10
 #define MAX_CMD_LEN  100
+#define MAX_LINE_LEN 512
 
 typedef struct {
     char name[20];
