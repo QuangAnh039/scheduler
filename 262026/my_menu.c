@@ -1,13 +1,43 @@
 #include "my_menu.h"
-void show_menu() {
-    printf("\n===== Scheduler Menu =====\n");
-    printf("1. Add Task\n");
-    printf("2. Modify Task\n");
-    printf("3. Remove Task\n");
-    printf("4. Print Task List\n");
-    printf("5. Save to Backup\n");
-    printf("6. Exit Menu\n");
-    printf("==========================\n");
+void show_menu() 
+{
+    int choice;
+    do 
+    {
+        printf("\n===== Scheduler Menu =====\n");
+        printf("1. Add Task\n");
+        printf("2. Modify Task\n");
+        printf("3. Remove Task\n");
+        printf("4. Print Task List\n");
+        printf("5. Save to Backup\n");
+        printf("6. Exit Menu\n");
+        printf("==========================\n");
+        printf("Enter your choice: ");
+        if (scanf("%d", &choice) != 1) 
+        {
+            printf("Invalid input! Please enter a number.\n");
+            int c;
+            while ((c = getchar()) != '\n' && c != EOF);
+            choice = 0;
+            continue;
+        }
+        switch (choice) 
+        {
+            case 1: add_task(); break;
+            case 2: modify_task(); break;
+            case 3: remove_task(); break;
+            case 4: print_task_list(); break;
+            case 5: save_to_backup("backup.csv"); printf("Backup saved.\n"); break;
+            case 6: 
+            {
+                pid_t pgid = getpgrp(); 
+                kill(-pgid, SIGCONT); 
+                printf("Exiting menu, resume running...\n"); 
+                break;
+            }
+                default: printf("Invalid choice.\n");
+        } 
+    } while (choice != 6);
 }
 
 void add_task() {
