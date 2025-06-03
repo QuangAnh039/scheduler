@@ -1,0 +1,7 @@
+current_time,0
+name,command,arrival_time,priority,burst_time,remaining_time,started,finished
+Task1,./task1,0,3,5,5,0,0
+Task2,./task2,1,5,5,5,0,0
+Task3,./task2,2,2,3,3,0,0
+Task4,./task2,3,1,2,2,0,0
+Task5,./task2,4,6,6,6,0,0
